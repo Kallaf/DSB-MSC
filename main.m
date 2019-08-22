@@ -21,9 +21,27 @@ P2 = abs(Y/L);
 P1 = P2(1:L/2+1);
 P1(2:end-1) = 2*P1(2:end-1);
 
+
+
 % Define the frequency domain f and plot the single-sided amplitude spectrum P1.
 f = Fs*(0:(L/2))/L;
-plot(f,P1) 
+plot(f,P1)
 title('Single-Sided Amplitude Spectrum of X(t)')
 xlabel('f (Hz)')
 ylabel('|P1(f)|')
+
+% Use an ideal filter to remove all the frequencies greater than 4KHZ
+
+cutoffLength = 1;
+
+for i = 1:length(f)
+	if f(i) >= 4000
+		cutoffLength = i-1;
+		break;
+	end
+end
+
+% 2) Use an ideal filter to remove all frequencies greater than 4KHZ
+
+P1 = P1(1:cutoffLength);
+f = f(1:cutoffLength);
