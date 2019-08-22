@@ -27,6 +27,3 @@ plot(f,P1)
 title('Single-Sided Amplitude Spectrum of X(t)')
 xlabel('f (Hz)')
 ylabel('|P1(f)|')
-
-
-%lowpass(xn,4,fs)
