@@ -46,7 +46,6 @@ ylabel('|amplitude| (volt)')
 
 sound(y_filtered, Fs, 16);
 
-%audiowrite('result.wav',vtf,fs);
 % 5.1)Increase sampling frequency of filtered signal
 %---------------------------------------------------
 
